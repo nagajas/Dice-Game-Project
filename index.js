@@ -9,15 +9,21 @@ function roll(){
 function decide(d1, d2){
     var winner;
     if(d1>d2){
-        winner = "🚩 Player 1 wins! ";
+        winner = "Player 1 wins! ";
     }
     else if(d1<d2){
-        winner = "Player 2 wins! 🚩";
+        winner = "Player 2 wins!";
     }
     else{
         winner = "Draw! 🎲";
     }
     return winner;
+}
+
+function refresh(){
+    var [d1,d2] = roll();
+    var winner = decide(d1,d2);
+    document.querySelector("h1").textContent = winner;
 }
 
 // Roll the dice
@@ -26,3 +32,4 @@ var [d1,d2] = roll();
 var winner = decide(d1,d2);
 // Change h1 text
 document.querySelector("h1").textContent = winner;
+
